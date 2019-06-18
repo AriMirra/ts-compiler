@@ -1,12 +1,12 @@
 package parser.AST;
 
 interface Visitor {
-//    void visitedNode(SequenceNode node);
-//    void visitedNode(BinaryNode node);
-//    void visitedNode(BinaryOperationNode node);
-//    void visitedNode(TypeNode node);
-//    void visitedNode(VariableNode node);
-//    void visitedNode(PrintNode node);
-//    void visitedNode(ConstantNode node);
-//    void visitedNode(ErrorNode node);
+    void visit(SequenceNode node);
+    void visit(BinaryNode node);
+    void visit(BinaryOpNode node);
+    void visit(TypeNode node);
+    void visit(VariableNode node);
+    void visit(PrintNode node);
+    void visit(ConstantNode node);
+    void visit(ErrorNode node);
 }
