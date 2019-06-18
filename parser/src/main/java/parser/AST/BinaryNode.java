@@ -6,7 +6,7 @@ public class BinaryNode extends AstNode {
     private AstNode left;
     private AstNode right;
 
-    BinaryNode(AstNodeType type, int line, int column, AstNode left, AstNode right) {
+    public BinaryNode(AstNodeType type, int line, int column, AstNode left, AstNode right) {
         super(type, line, column);
         this.left = left;
         this.right = right;
