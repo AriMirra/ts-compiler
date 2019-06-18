@@ -17,9 +17,13 @@ public class LexerInfo {
         this.tokenTable = tokenTable;
     }
 
+    public Token toToken(TokenType type) {
+        return new Token(type, currentString, startLine, startColumn);
+    }
+
     public void nextLine() {
-        column = 1;
         line++;
+        column = 1;
     }
 
     public void nextColumn() {
@@ -27,9 +31,9 @@ public class LexerInfo {
     }
 
     public void nextString() {
-        currentString = "";
         startLine = line;
         startColumn = column;
+        currentString = "";
     }
 
     public String addToString(char c) {
@@ -51,9 +55,5 @@ public class LexerInfo {
 
     public int getColumn() {
         return column;
-    }
-
-    public Token toToken(TokenType type) {
-        return new Token(type, currentString, startLine, startColumn);
     }
 }

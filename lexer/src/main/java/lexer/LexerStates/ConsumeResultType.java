@@ -3,9 +3,8 @@ package lexer.LexerStates;
 public enum ConsumeResultType {
     VALID,
     TRANSITION,
-    ACCEPTED_TRANSITION,
+    ACCEPTED,
     ERROR,
-    ERROR_TRANSITION,
-    NEW_LINE
+    NEW_LINE,
 }
 
