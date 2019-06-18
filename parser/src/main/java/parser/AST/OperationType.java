@@ -2,12 +2,12 @@ package parser.AST;
 
 public enum OperationType {
     ADDITION,
-    SUBTRACT,
+    SUBTRACTION,
     MULTIPLICATION,
     DIVISION;
 
     public static boolean isAdditive(OperationType type) {
-        return type == ADDITION || type == SUBTRACT;
+        return type == ADDITION || type == SUBTRACTION;
     }
 
     public static boolean isMultiplicative(OperationType type) {

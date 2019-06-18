@@ -1,6 +1,6 @@
 package parser.AST;
 
-interface Visitor {
+public interface Visitor {
     void visit(SequenceNode node);
     void visit(BinaryNode node);
     void visit(BinaryOpNode node);

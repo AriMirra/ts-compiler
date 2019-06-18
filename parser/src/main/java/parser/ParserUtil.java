@@ -19,7 +19,7 @@ class ParserUtil {
     }
 
     static boolean isAdditive(OperationType type) {
-        return type == OperationType.ADDITION || type == OperationType.SUBTRACT;
+        return type == OperationType.ADDITION || type == OperationType.SUBTRACTION;
     }
 
     static boolean isMultiplicative(OperationType type) {
@@ -29,7 +29,7 @@ class ParserUtil {
     static OperationType toOpType(TokenType type) {
         switch (type) {
             case PLUS: return OperationType.ADDITION;
-            case MINUS: return OperationType.SUBTRACT;
+            case MINUS: return OperationType.SUBTRACTION;
             case SLASH: return OperationType.DIVISION;
             default: return OperationType.MULTIPLICATION;
         }
