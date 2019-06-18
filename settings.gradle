@@ -1,0 +1,5 @@
+rootProject.name = 'ts-compiler'
+
+include 'lexer'
+include 'parser'
+
