@@ -1,4 +1,4 @@
-package lexer;
+package lexer.tokens;
 
 public enum TokenType {
     UNKNOWN,
@@ -22,7 +22,7 @@ public enum TokenType {
     STRING_LITERAL,
     END;
 
-    String name;
+    private String name;
 
     TokenType() {}
 
@@ -32,5 +32,9 @@ public enum TokenType {
 
     public String toString() {
         return this.name;
+    }
+
+    public String getName() {
+        return name;
     }
 }

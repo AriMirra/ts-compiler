@@ -1,6 +1,8 @@
 package lexer;
 
-public class LexError {
+import lexer.tokens.Token;
+
+class LexError {
     private String message;
     private Token token;
 
@@ -9,7 +11,7 @@ public class LexError {
         this.token = token;
     }
 
-    public static LexError unexpectedToken(Token token) {
+    static LexError unexpectedToken(Token token) {
         String errorMessage = "unexpected token '" + token.getValue() + "'" + "at " + token.getLine() + ":" + token.getColumn();
         return new LexError(errorMessage, token);
     }

@@ -1,7 +1,7 @@
-package lexer.LexerStates;
+package lexer;
 
-import lexer.Token;
-import lexer.TokenType;
+import lexer.tokens.Token;
+import lexer.tokens.TokenType;
 
 import java.util.Map;
 
@@ -13,7 +13,7 @@ public class LexerInfo {
     private String currentString = "";
     private Map<String, TokenType> tokenTable;
 
-    public LexerInfo(Map<String, TokenType> tokenTable) {
+    LexerInfo(Map<String, TokenType> tokenTable) {
         this.tokenTable = tokenTable;
     }
 
@@ -21,12 +21,12 @@ public class LexerInfo {
         return new Token(type, currentString, startLine, startColumn);
     }
 
-    public void nextLine() {
+    void nextLine() {
         line++;
         column = 1;
     }
 
-    public void nextColumn() {
+    void nextColumn() {
         column++;
     }
 
@@ -36,9 +36,8 @@ public class LexerInfo {
         currentString = "";
     }
 
-    public String addToString(char c) {
+    public void addToString(char c) {
         currentString += c;
-        return currentString;
     }
 
     public String getString() {

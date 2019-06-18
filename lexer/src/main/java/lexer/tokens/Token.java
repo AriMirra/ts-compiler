@@ -1,10 +1,12 @@
-package lexer;
+package lexer.tokens;
 
 public class Token {
     private TokenType type;
     private String value;
     private int line;
     private int column;
+
+    private Token() {}
 
     public Token(TokenType type, String value, int line, int column) {
         this.type = type;
@@ -13,19 +15,19 @@ public class Token {
         this.column = column;
     }
 
-    int getLine() {
+    public int getLine() {
         return line;
     }
 
-    int getColumn() {
+    public int getColumn() {
         return column;
     }
 
-    TokenType getType() {
+    public TokenType getType() {
         return type;
     }
 
-    String getValue() {
+    public String getValue() {
         return value;
     }
 
@@ -45,4 +47,6 @@ public class Token {
     public String toString() {
         return type.toString() + ":" + value + " at " + line + ":" + column;
     }
+
+    public static Token empty() {return new Token();}
 }

@@ -1,4 +1,4 @@
-package lexer.LexerStates;
+package lexer.lexerStates;
 
 public enum ConsumeResultType {
     VALID,

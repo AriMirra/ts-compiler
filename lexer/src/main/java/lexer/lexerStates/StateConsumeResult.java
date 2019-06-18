@@ -1,6 +1,6 @@
-package lexer.LexerStates;
+package lexer.lexerStates;
 
-import lexer.Token;
+import lexer.tokens.Token;
 
 public class StateConsumeResult {
     private ConsumeResultType type;
@@ -8,7 +8,7 @@ public class StateConsumeResult {
     private Token token;
     private boolean consumed;
 
-    public StateConsumeResult(ConsumeResultType type, LexerState nextState, Token token, boolean consumed) {
+    StateConsumeResult(ConsumeResultType type, LexerState nextState, Token token, boolean consumed) {
         this.type = type;
         this.nextState = nextState;
         this.token = token;
@@ -19,7 +19,7 @@ public class StateConsumeResult {
         return type;
     }
 
-    public void setType(ConsumeResultType type) {
+    void setType(ConsumeResultType type) {
         this.type = type;
     }
 
@@ -35,7 +35,7 @@ public class StateConsumeResult {
         return token;
     }
 
-    public void setToken(Token token) {
+    void setToken(Token token) {
         this.token = token;
     }
 
