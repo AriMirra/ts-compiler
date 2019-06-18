@@ -30,7 +30,7 @@ public class Lexer {
             result = currentState.consume(c, lexerInfo);
             lexByType();
         }
-        return new LexResult(tokens, errors, errors.isEmpty());
+        return new LexResult(tokens, errors, !errors.isEmpty());
     }
 
     private void lexByType() {
@@ -38,7 +38,7 @@ public class Lexer {
             case ACCEPTED:
                 Token token = result.getToken();
                 if (token.getType() == TokenType.UNKNOWN) errors.add(LexError.unexpectedToken(token));
-                else tokens.add(token);
+                tokens.add(token);
                 currentState = new DefaultState();
                 break;
             case TRANSITION:

@@ -45,7 +45,8 @@ public class Token {
     }
 
     public String toString() {
-        return type.toString() + ":" + value + " at " + line + ":" + column;
+        if (type == null || value == null) return "empty token";
+        else return "[" + type.toString() + "] " + "'" + value + "' at " + line + ":" + column;
     }
 
     public static Token empty() {return new Token();}

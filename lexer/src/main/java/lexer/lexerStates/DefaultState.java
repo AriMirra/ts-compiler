@@ -34,19 +34,24 @@ public class DefaultState implements LexerState {
             switch (c) {
                 case '(' : {
                     result.setToken(lexerInfo.toToken(TokenType.LPAREN));
+                    break;
                 }
                 case ')' : {
                     result.setToken(lexerInfo.toToken(TokenType.RPAREN));
+                    break;
                 }
                 case ':' : {
                     result.setToken(lexerInfo.toToken(TokenType.COLON));
+                    break;
                 }
                 case ';' : {
                     result.setToken(lexerInfo.toToken(TokenType.SEMICOLON));
+                    break;
                 }
                 default: {
                     result.setType(ConsumeResultType.ERROR);
                     result.setToken(lexerInfo.toToken(TokenType.UNKNOWN));
+                    break;
                 }
             }
             return result;

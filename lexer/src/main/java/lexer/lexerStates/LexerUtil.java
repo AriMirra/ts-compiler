@@ -5,9 +5,9 @@ import lexer.tokens.TokenType;
 import java.util.HashMap;
 import java.util.Map;
 
-class LexerUtil {
+public class LexerUtil {
 
-    static Map<String, TokenType> createTokenTable() {
+    public static Map<String, TokenType> createTokenTable() {
         Map<String, TokenType> tokenTable = new HashMap<>();
         tokenTable.put(TokenType.LET.getName(), TokenType.LET);
         tokenTable.put(TokenType.PRINT.getName(), TokenType.PRINT);

@@ -13,13 +13,13 @@ public enum TokenType {
     PERIOD("."),
     EQL("="),
     COLON(":"),
-    IDENTIFIER,
+    IDENTIFIER("identifier"),
     LET("let"),
     PRINT("print"),
     STRING("string"),
     NUMBER("number"),
-    NUMBER_LITERAL,
-    STRING_LITERAL,
+    NUMBER_LITERAL("number literal"),
+    STRING_LITERAL("string literal"),
     END;
 
     private String name;

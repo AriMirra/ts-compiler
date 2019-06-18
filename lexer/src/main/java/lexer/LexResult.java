@@ -22,4 +22,8 @@ public class LexResult {
     public List<LexError> getErrors() {
         return errors;
     }
+
+    public boolean isError() {
+        return error;
+    }
 }

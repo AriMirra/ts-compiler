@@ -15,4 +15,9 @@ class LexError {
         String errorMessage = "unexpected token '" + token.getValue() + "'" + "at " + token.getLine() + ":" + token.getColumn();
         return new LexError(errorMessage, token);
     }
+
+    @Override
+    public String toString() {
+        return "[ERROR]: " + token.toString();
+    }
 }
