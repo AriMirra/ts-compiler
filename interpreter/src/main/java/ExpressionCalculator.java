@@ -1,4 +1,6 @@
 import parser.AST.*;
+import types.NumberType;
+import types.StringType;
 import types.Type;
 
 import java.util.Map;
@@ -7,11 +9,11 @@ public class ExpressionCalculator implements Visitor {
     private Type result = null;
     private Map<String, Type> globalMemory;
 
-    public ExpressionCalculator(Map<String, Type> globalMemory) {
+    ExpressionCalculator(Map<String, Type> globalMemory) {
         this.globalMemory = globalMemory;
     }
 
-    public Type calculate(AstNode root) {
+    Type calculate(AstNode root) {
         root.accept(this);
         return result;
     }
@@ -41,12 +43,12 @@ public class ExpressionCalculator implements Visitor {
     public void visit(VariableNode node) {
         Type variable = globalMemory.get(node.getName());
         if (variable != null) result = variable;
-        else throw new UndeclaredVariableException(node.getName());
+        else throw new RuntimeException("Variable '" + node.getName() + "' has not been declared!");
     }
 
     @Override
     public void visit(ConstantNode node) {
-        result = InterpreterUtil.constantToType(node.getLanguageType(), node.getValue());
+        result = constantToType(node.getLanguageType(), node.getValue());
     }
 
     @Override
@@ -72,5 +74,10 @@ public class ExpressionCalculator implements Visitor {
     @Override
     public void visit(ErrorNode node) {
         throw new UnsupportedOperationException();
+    }
+
+    private static Type constantToType(LanguageType languageType, String value) {
+        if (languageType == LanguageType.NUMBER) return new NumberType(Double.parseDouble(value));
+        else return new StringType(value);
     }
 }

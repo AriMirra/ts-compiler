@@ -9,7 +9,7 @@ public class StringType implements Type {
         this.value = "";
     }
 
-    StringType(String value) {
+    public StringType(String value) {
         this.value = value;
     }
 

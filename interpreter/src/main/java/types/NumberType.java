@@ -9,7 +9,7 @@ public class NumberType implements Type {
         this.value = 0.0;
     }
 
-    NumberType(Double value) {
+    public NumberType(Double value) {
         this.value = value;
     }
 
