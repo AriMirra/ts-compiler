@@ -23,7 +23,7 @@ public class Lexer {
         this.lexerInfo = new LexerInfo(tokenTable);
     }
 
-    LexResult lex(String code) {
+    public LexResult lex(String code) {
         result = null;
         for (index = 0; index < code.length(); incrementIndex()) {
             char c = code.charAt(index);
